@@ -1,0 +1,36 @@
+print(" ")
+print("Alvaro Campechano 3W")
+print(" ")
+
+def factorial(n):
+    """
+    Calcula el factorial de un número entero positivo.
+
+    Parámetros:
+    n (int): Un entero positivo.
+
+    Retorna:
+    int: El factorial del número n.
+    
+    Levanta:
+    ValueError: Si n es negativo o no es un entero.
+    """
+    if n < 0:
+        raise ValueError("El número debe ser un entero positivo.")
+    if n == 0 or n == 1:
+        return 1
+    resultado = 1
+    for i in range(2, n + 1):
+        resultado *= i
+    return resultado
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    try:
+        numero_usuario = int(input("Introduce un entero positivo: "))
+        if numero_usuario < 0:
+            print("Por favor, introduce un número positivo.")
+        else:
+            print(f"El factorial de {numero_usuario} es {factorial(numero_usuario)}.")
+    except ValueError:
+        print("Entrada no válida. Por favor, introduce un entero positivo.")
